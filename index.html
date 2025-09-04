@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos - Loja Interativa</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Adicionando referência ao arquivo CSS externo -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Partículas de fundo animadas -->
+    <div class="particles" id="particles"></div>
+
+    <div class="container-fluid">
+        <!-- Navbar com efeito glassmorphism -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-glass fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand text-white fade-in-left" href="#">
+                        <i class="fas fa-store me-2"></i>Loja Interativa
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">
+                                    <i class="fas fa-home me-1"></i>Início
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">
+                                    <i class="fas fa-box me-1"></i>Produtos
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">
+                                    <i class="fas fa-envelope me-1"></i>Contato
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Carrinho flutuante -->
+        <div class="cart-float">
+            <button class="btn btn-primary btn-animated" data-bs-toggle="modal" data-bs-target="#cartModal" title="Ver Carrinho">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+
+        <!-- Seção principal -->
+        <main class="py-5" style="margin-top: 80px;">
+            <div class="container">
+                <h1 class="text-center mb-5 text-white fade-in-up">
+                    <i class="fas fa-sparkles me-2"></i>Nossos Produtos Incríveis
+                </h1>
+                
+                <!-- Busca e Filtros -->
+                <div class="row mb-5 fade-in-up">
+                    <div class="col-md-6 mb-3">
+                        <div class="search-container">
+                            <input type="text" class="form-control search-input" id="searchInput" 
+                                   placeholder="🔍 Buscar produtos..." autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex gap-2 flex-wrap">
+                            <button class="btn btn-outline-light filter-btn active" data-category="all">
+                                <i class="fas fa-th me-1"></i>Todos
+                            </button>
+                            <button class="btn btn-outline-light filter-btn" data-category="eletronicos">
+                                <i class="fas fa-laptop me-1"></i>Eletrônicos
+                            </button>
+                            <button class="btn btn-outline-light filter-btn" data-category="acessorios">
+                                <i class="fas fa-headphones me-1"></i>Acessórios
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row justify-content-center g-4" id="productsContainer">
+                    <!-- Card Produto 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-left" data-category="eletronicos">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="/placeholder.svg?height=250&width=400" 
+                                     class="card-img-top" alt="Smartphone Premium">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-success">
+                                        <i class="fas fa-star me-1"></i>Novo
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Smartphone Premium</h5>
+                                <p class="card-text flex-grow-1">
+                                    Smartphone de última geração com câmera de alta resolução, 
+                                    processador rápido e design elegante.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 1.299,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(1, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-1">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(1, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(1, 'Smartphone Premium', 1299)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(1)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-up" data-category="eletronicos">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="/placeholder.svg?height=250&width=400" 
+                                     class="card-img-top" alt="Notebook Gamer">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-danger">
+                                        <i class="fas fa-fire me-1"></i>Oferta
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Notebook Gamer</h5>
+                                <p class="card-text flex-grow-1">
+                                    Notebook para jogos com placa de vídeo dedicada, 
+                                    16GB de RAM e SSD de alta velocidade.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 3.499,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(2, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-2">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(2, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(2, 'Notebook Gamer', 3499)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(2)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-right" data-category="acessorios">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="/placeholder.svg?height=250&width=400" 
+                                     class="card-img-top" alt="Fones Wireless">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-crown me-1"></i>Popular
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Fones Wireless Premium</h5>
+                                <p class="card-text flex-grow-1">
+                                    Fones de ouvido sem fio com cancelamento de ruído, 
+                                    bateria de longa duração e qualidade excepcional.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 299,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(3, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-3">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(3, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(3, 'Fones Wireless Premium', 299)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(3)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-light py-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">
+                            <i class="fas fa-heart text-danger me-2"></i>
+                            2024 Loja Interativa. Feito com amor e tecnologia.
+                            <i class="fas fa-code ms-2 text-info"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">
+                        <i class="fas fa-shopping-cart me-2 text-primary"></i>Meu Carrinho
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <div class="text-center text-muted py-5">
+                            <i class="fas fa-shopping-cart fa-4x mb-3 opacity-50"></i>
+                            <h5>Seu carrinho está vazio</h5>
+                            <p>Adicione alguns produtos incríveis!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Total: <span id="cartTotal" class="text-success">R$ 0,00</span></h5>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-outline-secondary" onclick="CartManager.clear()" id="clearCartBtn">
+                                <i class="fas fa-trash me-2"></i>Limpar
+                            </button>
+                            <button class="btn btn-success btn-animated" id="checkoutBtn" disabled>
+                                <i class="fas fa-credit-card me-2"></i>Finalizar Compra
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes do Produto -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalTitle">Detalhes do Produto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body" id="productModalBody">
+                    <!-- Conteúdo será inserido dinamicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Adicionando referência ao arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
