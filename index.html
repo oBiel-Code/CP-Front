@@ -84,6 +84,12 @@
                             <button class="btn btn-outline-light filter-btn" data-category="acessorios">
                                 <i class="fas fa-headphones me-1"></i>Acessórios
                             </button>
+                            <button class="btn btn-outline-light filter-btn" data-category="gaming">
+                                <i class="fas fa-gamepad me-1"></i>Gaming
+                            </button>
+                            <button class="btn btn-outline-light filter-btn" data-category="casa">
+                                <i class="fas fa-home me-1"></i>Casa
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -95,7 +101,7 @@
                     <div class="col-12 col-md-6 col-lg-4 product-item fade-in-left" data-category="eletronicos">
                         <div class="card product-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="/placeholder.svg?height=250&width=400" 
+                                <img src="public/modern-smartphone-premium-design.jpg" 
                                      class="card-img-top" alt="Smartphone Premium">
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <span class="badge bg-success">
@@ -139,7 +145,7 @@
                     <div class="col-12 col-md-6 col-lg-4 product-item fade-in-up" data-category="eletronicos">
                         <div class="card product-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="/placeholder.svg?height=250&width=400" 
+                                <img src="public/gaming-laptop-rgb-keyboard.jpg" 
                                      class="card-img-top" alt="Notebook Gamer">
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <span class="badge bg-danger">
@@ -183,7 +189,7 @@
                     <div class="col-12 col-md-6 col-lg-4 product-item fade-in-right" data-category="acessorios">
                         <div class="card product-card h-100">
                             <div class="position-relative overflow-hidden">
-                                <img src="/placeholder.svg?height=250&width=400" 
+                                <img src="public/wireless-headphones-premium-design.jpg" 
                                      class="card-img-top" alt="Fones Wireless">
                                 <div class="position-absolute top-0 end-0 m-2">
                                     <span class="badge bg-info">
@@ -222,6 +228,314 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Card Produto 4 - Smartwatch -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-left" data-category="acessorios">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="smartwatch-fitness-tracker.jpg" 
+                                     class="card-img-top" alt="Smartwatch Fitness">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-warning">
+                                        <i class="fas fa-bolt me-1"></i>Tendência
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Smartwatch Fitness Pro</h5>
+                                <p class="card-text flex-grow-1">
+                                    Relógio inteligente com monitoramento de saúde, GPS integrado, 
+                                    resistente à água e bateria de 7 dias.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 599,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(4, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-4">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(4, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(4, 'Smartwatch Fitness Pro', 599)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(4)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 5 - Tablet -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-up" data-category="eletronicos">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="tablet-professional-design.jpg" 
+                                     class="card-img-top" alt="Tablet Profissional">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-success">
+                                        <i class="fas fa-star me-1"></i>Novo
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Tablet Profissional 12"</h5>
+                                <p class="card-text flex-grow-1">
+                                    Tablet de alta performance com tela de 12 polegadas, 
+                                    ideal para trabalho e entretenimento.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 1.899,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(5, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-5">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(5, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(5, 'Tablet Profissional 12', 1899)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(5)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 6 - Mouse Gamer -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-right" data-category="gaming">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="gaming-mouse-rgb-precision.jpg" 
+                                     class="card-img-top" alt="Mouse Gamer RGB">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-danger">
+                                        <i class="fas fa-fire me-1"></i>Oferta
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Mouse Gamer RGB Pro</h5>
+                                <p class="card-text flex-grow-1">
+                                    Mouse gamer de alta precisão com iluminação RGB, 
+                                    12000 DPI e design ergonômico.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 149,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(6, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-6">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(6, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(6, 'Mouse Gamer RGB Pro', 149)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(6)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 7 - Teclado Mecânico -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-left" data-category="gaming">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="mechanical-keyboard-rgb-switches.jpg" 
+                                     class="card-img-top" alt="Teclado Mecânico">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-info">
+                                        <i class="fas fa-crown me-1"></i>Popular
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Teclado Mecânico RGB</h5>
+                                <p class="card-text flex-grow-1">
+                                    Teclado mecânico com switches blue, iluminação RGB 
+                                    personalizável e teclas anti-ghosting.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 399,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(7, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-7">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(7, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(7, 'Teclado Mecânico RGB', 399)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(7)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 8 - Câmera Digital -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-up" data-category="eletronicos">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="digital-camera-professional-photography.jpg" 
+                                     class="card-img-top" alt="Câmera Digital">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-warning">
+                                        <i class="fas fa-bolt me-1"></i>Tendência
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Câmera Digital 4K</h5>
+                                <p class="card-text flex-grow-1">
+                                    Câmera digital profissional com gravação 4K, 
+                                    lente intercambiável e estabilização de imagem.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 2.799,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(8, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-8">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(8, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(8, 'Câmera Digital 4K', 2799)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(8)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 9 - Power Bank -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-right" data-category="acessorios">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="power-bank-fast-charging-portable.jpg" 
+                                     class="card-img-top" alt="Power Bank">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-success">
+                                        <i class="fas fa-star me-1"></i>Novo
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Power Bank 20000mAh</h5>
+                                <p class="card-text flex-grow-1">
+                                    Carregador portátil de alta capacidade com carregamento 
+                                    rápido e múltiplas portas USB.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 89,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(9, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-9">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(9, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(9, 'Power Bank 20000mAh', 89)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(9)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Produto 10 - Monitor 4K -->
+                    <div class="col-12 col-md-6 col-lg-4 product-item fade-in-left" data-category="casa">
+                        <div class="card product-card h-100">
+                            <div class="position-relative overflow-hidden">
+                                <img src="monitor-4k-ultrawide-gaming.jpg" 
+                                     class="card-img-top" alt="Monitor 4K">
+                                <div class="position-absolute top-0 end-0 m-2">
+                                    <span class="badge bg-danger">
+                                        <i class="fas fa-fire me-1"></i>Oferta
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Monitor 4K 27" Gaming</h5>
+                                <p class="card-text flex-grow-1">
+                                    Monitor 4K de 27 polegadas com taxa de atualização de 144Hz, 
+                                    ideal para jogos e trabalho profissional.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="h5 text-primary mb-0 fw-bold">R$ 1.599,00</span>
+                                    <div class="quantity-selector">
+                                        <button class="quantity-btn" onclick="changeQuantity(10, -1)" title="Diminuir">
+                                            <i class="fas fa-minus"></i>
+                                        </button>
+                                        <span class="fw-bold" id="qty-10">1</span>
+                                        <button class="quantity-btn" onclick="changeQuantity(10, 1)" title="Aumentar">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary btn-animated flex-grow-1" 
+                                            onclick="addToCart(10, 'Monitor 4K 27 Gaming', 1599)">
+                                        <i class="fas fa-cart-plus me-2"></i>Adicionar
+                                        <div class="loading-spinner ms-2"></div>
+                                    </button>
+                                    <button class="btn btn-outline-primary" onclick="showProductDetails(10)" title="Ver detalhes">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -232,8 +546,8 @@
                 <div class="row">
                     <div class="col-12 text-center">
                         <p class="mb-0">
-                            <i class="fas fa-heart text-danger me-2"></i>
-                            2024 Loja Interativa. Feito com amor e tecnologia.
+                            <i class="fas text-danger me-2"></i>
+                            2025 - Feito por Gabriel Simões. Dirietos Autorais
                             <i class="fas fa-code ms-2 text-info"></i>
                         </p>
                     </div>
